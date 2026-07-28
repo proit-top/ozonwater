@@ -197,29 +197,24 @@ section {
     letter-spacing: -1px;
 }
 
-/* Product price */
+/* Product price — sole blue accent above specs */
 .product-price {
     margin: 0 0 1.75rem;
-    padding: 1.25rem 1.5rem;
-    border-radius: 16px;
-    background: linear-gradient(
-        135deg,
-        rgba(0, 102, 255, 0.08),
-        rgba(16, 185, 129, 0.08)
-    );
-    border: 1px solid rgba(0, 102, 255, 0.12);
+    padding: 0;
+    background: none;
+    border: none;
 }
 
 .product-price__value {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     font-weight: 800;
     letter-spacing: -0.5px;
     color: var(--color-primary);
-    line-height: 1.2;
+    line-height: 1.15;
 }
 
 .product-price__hint {
-    margin-top: 0.35rem;
+    margin-top: 0.4rem;
     font-size: 0.95rem;
     color: var(--color-text-light);
     font-weight: 400;
