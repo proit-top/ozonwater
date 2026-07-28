@@ -197,9 +197,13 @@ section {
     letter-spacing: -1px;
 }
 
-/* Product price — sole blue accent above specs */
+/* Product specs column: price + title centered as one block */
+.product-specs {
+    text-align: center;
+}
+
 .product-price {
-    margin: 0 0 1.75rem;
+    margin: 0 0 1rem;
     padding: 0;
     background: none;
     border: none;
@@ -213,11 +217,12 @@ section {
     line-height: 1.15;
 }
 
-.product-price__hint {
-    margin-top: 0.4rem;
-    font-size: 0.95rem;
-    color: var(--color-text-light);
-    font-weight: 400;
+.product-specs__title {
+    text-align: center;
+}
+
+.product-specs ul {
+    text-align: left;
 }
 
 /* Photo gallery strip */
