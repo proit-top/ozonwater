@@ -137,7 +137,7 @@ import Layout from "../layouts/Layout.astro";
             <h2 class="section-title">OzonWater R0 WS-R10</h2>
 
             <div
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 4rem; align-items: center; margin-bottom: 5rem;"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 4rem; align-items: start; margin-bottom: 5rem;"
             >
                 <div
                     class="animate-float"
@@ -168,6 +168,10 @@ import Layout from "../layouts/Layout.astro";
                 </div>
 
                 <div style="padding: 0 1rem;">
+                    <div id="product-price" class="product-price">
+                        <div class="product-price__value">700&nbsp;000&nbsp;₸</div>
+                        <div class="product-price__hint">Стоимость системы под ключ</div>
+                    </div>
                     <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">
                         Характеристики системы
                     </h3>
@@ -308,6 +312,32 @@ import Layout from "../layouts/Layout.astro";
                     <p style="color: var(--color-text-light); font-style: italic; line-height: 1.6;">
                         "Фильтр очень компактный, освободилось много места под мойкой. А главное — вкуснейший чай и кофе теперь у нас каждый день!"
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" style="background: var(--color-bg);">
+        <div class="container">
+            <h2 class="section-title">Фотографии</h2>
+            <div class="photo-gallery" role="region" aria-label="Галерея фотографий">
+                <div class="photo-gallery__item">
+                    <img src="/photo/1.jpeg" alt="OzonWater фото 1" loading="lazy" />
+                </div>
+                <div class="photo-gallery__item">
+                    <img src="/photo/2.jpeg" alt="OzonWater фото 2" loading="lazy" />
+                </div>
+                <div class="photo-gallery__item">
+                    <img src="/photo/3.jpeg" alt="OzonWater фото 3" loading="lazy" />
+                </div>
+                <div class="photo-gallery__item">
+                    <img src="/photo/4.jpeg" alt="OzonWater фото 4" loading="lazy" />
+                </div>
+                <div class="photo-gallery__item">
+                    <img src="/photo/5.jpeg" alt="OzonWater фото 5" loading="lazy" />
+                </div>
+                <div class="photo-gallery__item">
+                    <img src="/photo/6.jpeg" alt="OzonWater фото 6" loading="lazy" />
                 </div>
             </div>
         </div>

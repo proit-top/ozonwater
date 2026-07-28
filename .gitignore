@@ -1,9 +1,11 @@
-docs/
-docs
-.env
-.venv
-node_modules/
 .astro/
 dist/
+docs
+docs/
+.DS_Storetest-results/
+.env
+node_modules/
 npm-debug.log*
-.DS_Store
+playwright-report/
+.venv
+.worktrees/
