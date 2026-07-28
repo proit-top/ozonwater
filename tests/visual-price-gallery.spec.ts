@@ -48,4 +48,28 @@ test.describe("price and photo gallery", () => {
       fullPage: true,
     });
   });
+
+  test("opens lightbox on gallery photo click and closes on backdrop", async ({
+    page,
+  }) => {
+    await page.goto("/");
+
+    const lightbox = page.locator("#photo-lightbox");
+    await expect(lightbox).toBeHidden();
+
+    const firstThumb = page.locator("#gallery .photo-gallery__item").first();
+    await firstThumb.click();
+
+    await expect(lightbox).toBeVisible();
+    const fullImg = lightbox.locator("img");
+    await expect(fullImg).toBeVisible();
+    await expect(fullImg).toHaveAttribute("src", /\/photo\/1\.jpeg/);
+
+    await page.screenshot({
+      path: path.join("tests", "screenshots", "gallery-lightbox.png"),
+    });
+
+    await lightbox.click({ position: { x: 10, y: 10 } });
+    await expect(lightbox).toBeHidden();
+  });
 });

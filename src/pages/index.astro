@@ -321,27 +321,82 @@ import Layout from "../layouts/Layout.astro";
         <div class="container">
             <h2 class="section-title">Фотографии</h2>
             <div class="photo-gallery" role="region" aria-label="Галерея фотографий">
-                <div class="photo-gallery__item">
+                <button type="button" class="photo-gallery__item" data-full="/photo/1.jpeg" aria-label="Открыть фото 1">
                     <img src="/photo/1.jpeg" alt="OzonWater фото 1" loading="lazy" />
-                </div>
-                <div class="photo-gallery__item">
+                </button>
+                <button type="button" class="photo-gallery__item" data-full="/photo/2.jpeg" aria-label="Открыть фото 2">
                     <img src="/photo/2.jpeg" alt="OzonWater фото 2" loading="lazy" />
-                </div>
-                <div class="photo-gallery__item">
+                </button>
+                <button type="button" class="photo-gallery__item" data-full="/photo/3.jpeg" aria-label="Открыть фото 3">
                     <img src="/photo/3.jpeg" alt="OzonWater фото 3" loading="lazy" />
-                </div>
-                <div class="photo-gallery__item">
+                </button>
+                <button type="button" class="photo-gallery__item" data-full="/photo/4.jpeg" aria-label="Открыть фото 4">
                     <img src="/photo/4.jpeg" alt="OzonWater фото 4" loading="lazy" />
-                </div>
-                <div class="photo-gallery__item">
+                </button>
+                <button type="button" class="photo-gallery__item" data-full="/photo/5.jpeg" aria-label="Открыть фото 5">
                     <img src="/photo/5.jpeg" alt="OzonWater фото 5" loading="lazy" />
-                </div>
-                <div class="photo-gallery__item">
+                </button>
+                <button type="button" class="photo-gallery__item" data-full="/photo/6.jpeg" aria-label="Открыть фото 6">
                     <img src="/photo/6.jpeg" alt="OzonWater фото 6" loading="lazy" />
-                </div>
+                </button>
             </div>
         </div>
     </section>
+
+    <div
+        id="photo-lightbox"
+        class="photo-lightbox"
+        hidden
+        role="dialog"
+        aria-modal="true"
+        aria-label="Просмотр фотографии"
+    >
+        <button type="button" class="photo-lightbox__close" aria-label="Закрыть">×</button>
+        <img class="photo-lightbox__img" src="" alt="" />
+    </div>
+
+    <script>
+        const lightbox = document.getElementById("photo-lightbox");
+        const lightboxImg = lightbox?.querySelector(
+            ".photo-lightbox__img",
+        ) as HTMLImageElement | null;
+        const closeBtn = lightbox?.querySelector(".photo-lightbox__close");
+
+        function openLightbox(src: string, alt: string) {
+            if (!lightbox || !lightboxImg) return;
+            lightboxImg.src = src;
+            lightboxImg.alt = alt;
+            lightbox.hidden = false;
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeLightbox() {
+            if (!lightbox || !lightboxImg) return;
+            lightbox.hidden = true;
+            lightboxImg.src = "";
+            document.body.style.overflow = "";
+        }
+
+        document.querySelectorAll(".photo-gallery__item").forEach((item) => {
+            item.addEventListener("click", () => {
+                const btn = item as HTMLElement;
+                const src = btn.dataset.full;
+                const img = btn.querySelector("img");
+                if (src) openLightbox(src, img?.alt ?? "");
+            });
+        });
+
+        lightbox?.addEventListener("click", (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+        closeBtn?.addEventListener("click", (e) => {
+            e.stopPropagation();
+            closeLightbox();
+        });
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeLightbox();
+        });
+    </script>
 </Layout>
 <style>
     .hero-content {
