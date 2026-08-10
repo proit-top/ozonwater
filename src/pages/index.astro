@@ -232,7 +232,7 @@ import Layout from "../layouts/Layout.astro";
                 <!-- Review 1 -->
                 <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--color-bg); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">👤</div>
+                        <img src="/photo/1.jpeg" alt="Анна К." class="review-avatar" />
                         <div>
                             <div style="font-weight: 700; color: var(--color-text);">Анна К.</div>
                             <div style="color: #F59E0B; font-size: 0.9rem;">★★★★★</div>
@@ -246,7 +246,7 @@ import Layout from "../layouts/Layout.astro";
                 <!-- Review 2 -->
                 <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--color-bg); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">👤</div>
+                        <img src="/photo/2.jpeg" alt="Михаил С." class="review-avatar" />
                         <div>
                             <div style="font-weight: 700; color: var(--color-text);">Михаил С.</div>
                             <div style="color: #F59E0B; font-size: 0.9rem;">★★★★★</div>
@@ -260,7 +260,7 @@ import Layout from "../layouts/Layout.astro";
                 <!-- Review 3 -->
                 <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--color-bg); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">👤</div>
+                        <img src="/photo/3.jpeg" alt="Елена В." class="review-avatar" />
                         <div>
                             <div style="font-weight: 700; color: var(--color-text);">Елена В.</div>
                             <div style="color: #F59E0B; font-size: 0.9rem;">★★★★★</div>
@@ -274,7 +274,7 @@ import Layout from "../layouts/Layout.astro";
                 <!-- Review 4 -->
                 <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--color-bg); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">👤</div>
+                        <img src="/photo/4.jpeg" alt="Дмитрий П." class="review-avatar" />
                         <div>
                             <div style="font-weight: 700; color: var(--color-text);">Дмитрий П.</div>
                             <div style="color: #F59E0B; font-size: 0.9rem;">★★★★★</div>
@@ -288,7 +288,7 @@ import Layout from "../layouts/Layout.astro";
                 <!-- Review 5 -->
                 <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--color-bg); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">👤</div>
+                        <img src="/photo/5.jpeg" alt="Сергей М." class="review-avatar" />
                         <div>
                             <div style="font-weight: 700; color: var(--color-text);">Сергей М.</div>
                             <div style="color: #F59E0B; font-size: 0.9rem;">★★★★★</div>
@@ -302,7 +302,7 @@ import Layout from "../layouts/Layout.astro";
                 <!-- Review 6 -->
                 <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--color-bg); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">👤</div>
+                        <img src="/photo/6.jpeg" alt="Ольга Р." class="review-avatar" />
                         <div>
                             <div style="font-weight: 700; color: var(--color-text);">Ольга Р.</div>
                             <div style="color: #F59E0B; font-size: 0.9rem;">★★★★★</div>
@@ -319,25 +319,10 @@ import Layout from "../layouts/Layout.astro";
     <section id="gallery" style="background: var(--color-bg);">
         <div class="container">
             <h2 class="section-title">Фотографии</h2>
-            <div class="photo-gallery" role="region" aria-label="Галерея фотографий">
-                <button type="button" class="photo-gallery__item" data-full="/photo/1.jpeg" aria-label="Открыть фото 1">
-                    <img src="/photo/1.jpeg" alt="OzonWater фото 1" loading="lazy" />
-                </button>
-                <button type="button" class="photo-gallery__item" data-full="/photo/2.jpeg" aria-label="Открыть фото 2">
-                    <img src="/photo/2.jpeg" alt="OzonWater фото 2" loading="lazy" />
-                </button>
-                <button type="button" class="photo-gallery__item" data-full="/photo/3.jpeg" aria-label="Открыть фото 3">
-                    <img src="/photo/3.jpeg" alt="OzonWater фото 3" loading="lazy" />
-                </button>
-                <button type="button" class="photo-gallery__item" data-full="/photo/4.jpeg" aria-label="Открыть фото 4">
-                    <img src="/photo/4.jpeg" alt="OzonWater фото 4" loading="lazy" />
-                </button>
-                <button type="button" class="photo-gallery__item" data-full="/photo/5.jpeg" aria-label="Открыть фото 5">
-                    <img src="/photo/5.jpeg" alt="OzonWater фото 5" loading="lazy" />
-                </button>
-                <button type="button" class="photo-gallery__item" data-full="/photo/6.jpeg" aria-label="Открыть фото 6">
-                    <img src="/photo/6.jpeg" alt="OzonWater фото 6" loading="lazy" />
-                </button>
+            <div class="photo-gallery" role="region" aria-label="Галерея фотографий" style="justify-content: center; min-height: 200px; align-items: center;">
+                <p style="color: var(--color-text-light); font-size: 1.1rem; text-align: center; width: 100%;">
+                    Фотографии скоро появятся
+                </p>
             </div>
         </div>
     </section>
@@ -474,5 +459,14 @@ import Layout from "../layouts/Layout.astro";
     .water-compare:hover .compare-handle {
         left: 100% !important;
         opacity: 0;
+    }
+
+    .review-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(0, 102, 255, 0.15);
+        flex-shrink: 0;
     }
 </style>
