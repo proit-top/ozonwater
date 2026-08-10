@@ -232,7 +232,7 @@ import Layout from "../layouts/Layout.astro";
                 <!-- Review 1 -->
                 <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <img src="/photo/1.jpeg" alt="Анна К." class="review-avatar" />
+                        <img src="/photo/1.jpeg" alt="Анна К." class="review-avatar" data-full="/photo/1.jpeg" />
                         <div>
                             <div style="font-weight: 700; color: var(--color-text);">Анна К.</div>
                             <div style="color: #F59E0B; font-size: 0.9rem;">★★★★★</div>
@@ -246,7 +246,7 @@ import Layout from "../layouts/Layout.astro";
                 <!-- Review 2 -->
                 <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <img src="/photo/2.jpeg" alt="Михаил С." class="review-avatar" />
+                        <img src="/photo/2.jpeg" alt="Михаил С." class="review-avatar" data-full="/photo/2.jpeg" />
                         <div>
                             <div style="font-weight: 700; color: var(--color-text);">Михаил С.</div>
                             <div style="color: #F59E0B; font-size: 0.9rem;">★★★★★</div>
@@ -260,7 +260,7 @@ import Layout from "../layouts/Layout.astro";
                 <!-- Review 3 -->
                 <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <img src="/photo/3.jpeg" alt="Елена В." class="review-avatar" />
+                        <img src="/photo/3.jpeg" alt="Елена В." class="review-avatar" data-full="/photo/3.jpeg" />
                         <div>
                             <div style="font-weight: 700; color: var(--color-text);">Елена В.</div>
                             <div style="color: #F59E0B; font-size: 0.9rem;">★★★★★</div>
@@ -274,7 +274,7 @@ import Layout from "../layouts/Layout.astro";
                 <!-- Review 4 -->
                 <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <img src="/photo/4.jpeg" alt="Дмитрий П." class="review-avatar" />
+                        <img src="/photo/4.jpeg" alt="Дмитрий П." class="review-avatar" data-full="/photo/4.jpeg" />
                         <div>
                             <div style="font-weight: 700; color: var(--color-text);">Дмитрий П.</div>
                             <div style="color: #F59E0B; font-size: 0.9rem;">★★★★★</div>
@@ -288,7 +288,7 @@ import Layout from "../layouts/Layout.astro";
                 <!-- Review 5 -->
                 <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <img src="/photo/5.jpeg" alt="Сергей М." class="review-avatar" />
+                        <img src="/photo/5.jpeg" alt="Сергей М." class="review-avatar" data-full="/photo/5.jpeg" />
                         <div>
                             <div style="font-weight: 700; color: var(--color-text);">Сергей М.</div>
                             <div style="color: #F59E0B; font-size: 0.9rem;">★★★★★</div>
@@ -302,7 +302,7 @@ import Layout from "../layouts/Layout.astro";
                 <!-- Review 6 -->
                 <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <img src="/photo/6.jpeg" alt="Ольга Р." class="review-avatar" />
+                        <img src="/photo/6.jpeg" alt="Ольга Р." class="review-avatar" data-full="/photo/6.jpeg" />
                         <div>
                             <div style="font-weight: 700; color: var(--color-text);">Ольга Р.</div>
                             <div style="color: #F59E0B; font-size: 0.9rem;">★★★★★</div>
@@ -391,6 +391,14 @@ import Layout from "../layouts/Layout.astro";
                 const src = btn.dataset.full;
                 const img = btn.querySelector("img");
                 if (src) openLightbox(src, img?.alt ?? "");
+            });
+        });
+
+        document.querySelectorAll(".review-avatar").forEach((img) => {
+            img.addEventListener("click", () => {
+                const el = img as HTMLImageElement;
+                const src = el.dataset.full;
+                if (src) openLightbox(src, el.alt);
             });
         });
 
@@ -492,5 +500,11 @@ import Layout from "../layouts/Layout.astro";
         object-fit: cover;
         border: 2px solid rgba(0, 102, 255, 0.15);
         flex-shrink: 0;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .review-avatar:hover {
+        transform: scale(1.08);
+        box-shadow: 0 4px 16px rgba(0, 102, 255, 0.25);
     }
 </style>
